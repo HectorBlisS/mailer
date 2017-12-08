@@ -10,3 +10,6 @@ app = Celery("mailer")
 app.config_from_object("django.conf:settings")
 app.autodiscover_tasks(lambda:settings.INSTALLED_APPS)
 
+# heroku config
+app.conf.update(BROKER_URL='redis://redis-cubic-84777')
+
