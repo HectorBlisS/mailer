@@ -1,0 +1,101 @@
+html, body{
+	margin:0;
+}
+
+.blog{
+	position:relative;
+	max-width: 50%;
+	margin:0 auto;
+}
+
+.blog__cover{
+	background-image: url("http://s3-us-east-2.amazonaws.com/bloque9/blog/wp-content/uploads/2015/05/Introducci%C3%B3n-a-Django.png");
+	background-size: cover;
+	background-position: center;
+	background-color: black;
+	width: 100%;
+	min-height: 600px;
+}
+
+.blog h2{
+	font-size: 400%;
+	font-weight: lighter;
+}
+
+.blog__by{
+	display: flex;
+	align-items: center;
+}
+
+.blog__by img{
+	width: 50px;
+	border-radius: 50%;
+}
+
+.blog p{
+	font-size: 200%;
+	line-height: 60px;
+}
+
+/*React styles*/
+.subscribe{
+	background-color: black;
+	width: 100%;
+	padding: 40px 0;
+	text-align: center;
+	display:flex;
+	flex-direction:column;
+	color: white;
+}
+
+.subscribe h3{
+	margin:10px;
+	font-size: 200%;
+	font-weight: lighter;
+}
+.subscribe h5{
+	margin:10px;
+	font-size: 150%;
+	font-weight: lighter;
+	color:orange;
+}
+
+.subscribe form{
+	display: flex;
+	flex-direction:column;
+	align-items:center;
+}
+
+.subscribe form input[type=text], input[type=email]{
+	width: 300px;
+	border:none;
+	outline: none;
+	padding: 15px;
+	margin-bottom: 10px;
+	font-size: 120%;
+	border-radius: 5px;
+}
+
+.subscribe form input[type=submit]{
+	padding: 10px 25px;
+	background-color: orange;
+	color:white;
+	font-size: 120%;
+	border:none;
+	cursor: pointer;
+	transition:all .5s ease;
+}
+
+.subscribe form input[type=submit]:hover{
+	background-color: orangered;
+	padding:15px 70px;
+	font-size: 180%;
+}
+
+
+
+
+
+
+
+

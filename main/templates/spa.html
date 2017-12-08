@@ -1,0 +1,79 @@
+{%load static%}
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{%static 'styles.css'%}">
+	</head>
+	<body>
+		
+	<div class="blog__cover"></div>
+	<section class="blog">
+		<h2>¿Por qué usar Django?</h2>
+		<div class="blog__by">
+			<span>Por </span>
+			<img src="https://pbs.twimg.com/profile_images/578584405389750272/qSWfgRQG.jpeg" alt=""> 
+			<span>Jean Carlos Mariños Urquiaga</span>
+		</div>
+		<br>
+		<img src="https://s3-us-west-2.amazonaws.com/devcodepro/media/blog/por-que-usar-django.png" alt="djangoCornio">
+		<p>
+			¿Cuántas personas no se han preguntado lo mismo?, antes de responder esto deberíamos comenzar por otra pregunta, si es que aún no la conocen. ¿Que es Django?.
+			<br>
+
+			Los desarrolladores de Django lo definen así: “Django es un framework web de alto nivel que fomenta el desarrollo rápido y el diseño limpio y pragmático”, algo muy prometedor, pero  ¿Cuán cierta es esta definición? Para responder esto vamos a entrar un poco más en este framework así que explicaremos un poco sus características, así que, mientras vayas leyendo no saques de tu mente esta definición.
+			<br>
+			Características:
+			<br>
+			► Python: Para mi esto es lo mejor de todo y también es lo que se lleva “casi” todo el crédito a la definición de Django. “Django es un framework web de alto nivel” eso esta muy claro en la definición, pero ahora agregaremos algo, “Django es un framework web de alto nivel escrito en Python”.  Gracias a esto Django hereda todas las características y facilidades que nos da Python, entre ellas escribir código bastante fácil de entender, y sobre todo te permite desarrollar aplicaciones muy rápidas y potentes, si quiere conocer más sobre Python le recomiendo leer este artículo.
+			<br>
+			► Rapidez: Aquí me detendré a contarles un poco de la historia. Django nació en un ambiente periodístico, donde se subian noticias muy rápido, y como los desarrolladores no pudieron estar a ese ritmo decidieron crear algo que sí lo haga, y así fue como nace Django , es por eso que ha sido estructurado de tal manera que tus aplicaciones web se crean muy rápidas.
+			<br>
+			► DRY: No te repitas!, django utiliza esta filosofía para no crear bloques de código iguales y fomentar la reutilización del mismo.
+			<br>
+			► Admin: Django es el único framework que “por defecto” viene con un sistema de administración activo, listo para ser utilizado sin ningún tipo de configuración!
+			<br>
+			► ORM: Para resumir esto, tómalo como una herramienta que te permite realizar consultas SQL a la Base de Datos, SIN UTILIZAR SQL, ¿Cómo es eso?, Te pondré un ejemplo:
+			<br>
+			 
+
+			Sin ORM:
+
+			SELECT * FROM Alumno WHERE edad = 17
+
+			Con ORM:
+
+			Alumno.objects.filter(edad = 17)
+
+			No te convenció?. Tal vez esto sí lo haga
+
+			Sin ORM:
+
+			SELECT * FROM “autores_autor” INNER JOIN “autor_libro” ON (“autores_autor”.”id” = “autores_libro”.”autor_id”)
+
+			INNER JOIN “autores_libro_librerias” ON (“autores_libro”.”id” = “autores_libro_librerias”.”libro_id”)
+
+			INNER JOIN “autores_libreria” ON (“autores_libro_librerias”.”libreria_id” = “autores_libreria”.”id”) WHERE “autores_libreria”.”nombre” = “La Cultura”
+
+			Con ORM:
+
+			Autor.objects.filter(libros__libreria__nombre = “La Cultura”)
+			<br>
+			Si todo esto no te parece suficiente, Django es el único framework web que crea menos archivos al momento de iniciar un proyecto, increíblemente tu puedes iniciar un proyecto con tan sólo 5 archivos!, mientras que los otros framework te crean una estructura inmensa al crear un nuevo proyecto, “Desarrollo rápido, limpio y pragmático” recuerdan ?
+			<br>
+			Si quieres aprender más de este fabuloso Framework, dejo un curso gratuito en nuestro canal de youtube y un curso Profesional en nuestra plataforma.
+		</p>
+
+		<div id="root"></div>
+
+
+	</section>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.production.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.2.0/umd/react-dom.production.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+		<script type="text/babel" src="{%static 'app.js'%}"></script>
+
+
+	</body>
+</html>
