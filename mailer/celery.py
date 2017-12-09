@@ -11,7 +11,7 @@ app.config_from_object("django.conf:settings")
 app.autodiscover_tasks(lambda:settings.INSTALLED_APPS)
 
 # heroku config
-app.conf.update(CELERY_BROKER_URL = os.environ['REDIS_URL'])
+# app.conf.update(CELERY_BROKER_URL = os.environ['REDIS_URL'])
 
 # CELERY_ACCEPT_CONTENT = ['json'],
 # CELERY_TASK_SERIALIZER = 'json',

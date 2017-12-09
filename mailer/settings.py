@@ -145,7 +145,17 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL=False
 
 
-CELERY_BROKER_URL = os.environ['REDIS_URL']
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
+# Celery Stuff Heroku
+# BROKER_URL='redis://h:p37plo67rvej6ef38ndjtsvhr91@ec2-107-21-254-141.compute-1.amazonaws.com:19289'
+# CELERY_RESULT_BACKEND='redis://h:p37plo67rvej6ef38ndjtsvhr91@ec2-107-21-254-141.compute-1.amazonaws.com:19289'
+# REDIS_URL='redis://h:p37plo67rvej6ef38ndjtsvhr91@ec2-107-21-254-141.compute-1.amazonaws.com:19289'
+
+BROKER_URL=os.environ['REDIS_URL']
+CELERY_RESULT_BACKEND=os.environ['REDIS_URL']
+REDIS_URL=os.environ['REDIS_URL']
+
+CELERY_ACCEPT_CONTENT=['application/json']
+CELERY_TASK_SERIALIZER='json'
+CELERY_RESULT_SERIALIZER='json'
+CELERY_TIMEZONE='America/Mexico_City'
+
