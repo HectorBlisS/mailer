@@ -145,10 +145,10 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # DEFAULT_FROM_EMAIL=False
 
 # Correo electronico
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'box.fixter.org'
 EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'tterrenofacil@gmail.com'
-EMAIL_HOST_PASSWORD = 'Miguel741010'
+EMAIL_HOST_USER = 'contacto@fixter.org'
+EMAIL_HOST_PASSWORD = 'Poweroso77'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL=False
 
