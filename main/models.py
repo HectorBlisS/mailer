@@ -14,7 +14,7 @@ class Client(models.Model):
 		return self.name
 
 class Send(models.Model):
-	client=models.ForeignKey(Client, related_name='sends')
+	client=models.ForeignKey(Client, related_name='sends', on_delete="cascade")
 	title=models.CharField(max_length=140)
 	date=models.DateTimeField(auto_now=True)
 

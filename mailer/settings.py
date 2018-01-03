@@ -76,18 +76,18 @@ WSGI_APPLICATION = 'mailer.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
-
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mailer',
-        'USER':'bliss',
-        'PASSWORD': 'password',
-        'HOST':'localhost'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'mailer',
+    #     'USER':'bliss',
+    #     'PASSWORD': 'password',
+    #     'HOST':'localhost'
+    # }
 }
 
 import dj_database_url  
@@ -119,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Mexico_City'
 
 USE_I18N = True
 
@@ -132,9 +132,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "staticfiles"),) 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),) 
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 # Correo electronico
 EMAIL_HOST='smtp.gmail.com'
@@ -144,7 +144,16 @@ EMAIL_HOST_PASSWORD = 'Poweroso1704'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL=False
 
+# from celery.schedules import crontab
 
+# CELERY_TIMEZONE = 'America/Mexico_City'
+
+# CELERY_BEAT_SCHEDULE = {
+#     'task_number_one':{
+#         'task': 'main.tasks.send_news',
+#         'schedule': crontab()
+#     }
+# }
 
 # Celery Stuff Heroku
 BROKER_URL=os.environ['REDIS_URL']
