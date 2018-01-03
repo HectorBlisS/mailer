@@ -156,9 +156,9 @@ DEFAULT_FROM_EMAIL=False
 # }
 
 # Celery Stuff Heroku
-CELERY_BROKER_URL=os.environ['REDIS_URL']
+BROKER_URL=os.environ['REDIS_URL']
 CELERY_RESULT_BACKEND=os.environ['REDIS_URL']
-CELERY_REDIS_URL=os.environ['REDIS_URL']
+REDIS_URL=os.environ['REDIS_URL']
 
 CELERY_ACCEPT_CONTENT=['application/json']
 CELERY_TASK_SERIALIZER='json'
