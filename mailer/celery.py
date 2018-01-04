@@ -11,3 +11,5 @@ app = Celery("mailer")
 app.config_from_object("django.conf:settings", namespace='CELERY')
 app.autodiscover_tasks(lambda:settings.INSTALLED_APPS)
 
+app.conf.update(BROKER_URL=os.environ['REDIS_URL'],
+                CELERY_RESULT_BACKEND=os.environ['REDIS_URL'])
