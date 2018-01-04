@@ -137,9 +137,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 # Correo electronico
-EMAIL_HOST='box.fixter.org'
+EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'contacto@fixter.org'
+EMAIL_HOST_USER = 'fixtergeek@gmail.com'
 EMAIL_HOST_PASSWORD = 'Poweroso1704'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL=False
@@ -156,8 +156,8 @@ DEFAULT_FROM_EMAIL=False
 # }
 
 # Celery Stuff Heroku
-BROKER_URL=os.environ['REDIS_URL']
-CELERY_RESULT_BACKEND=os.environ['REDIS_URL']
+#BROKER_URL=os.environ['REDIS_URL']
+#CELERY_RESULT_BACKEND=os.environ['REDIS_URL']
 # REDIS_URL=os.environ['REDIS_URL']
 
 # CELERY_ACCEPT_CONTENT=['application/json']
